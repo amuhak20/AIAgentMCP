@@ -1,0 +1,16 @@
+{
+  "name": "ai-agent-mcp-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright test project",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest",
+    "@types/node": "^22.20.2"
+  }
+}

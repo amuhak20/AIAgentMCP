@@ -1,0 +1,29 @@
+{
+	"servers": {
+		"playwright": {
+			"type": "stdio",
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@latest"
+			]
+		},
+		"github": {
+			"type": "stdio",
+			"command": "docker",
+			"args": [
+				"run",
+				"-i",
+				"--rm",
+				"-p",
+				"127.0.0.1:8085:8085",
+				"-e",
+				"GITHUB_OAUTH_CALLBACK_PORT",
+				"ghcr.io/github/github-mcp-server"
+			],
+			"env": {
+				"GITHUB_OAUTH_CALLBACK_PORT": "8085"
+			}
+		}
+	},
+	"inputs": []
+}
