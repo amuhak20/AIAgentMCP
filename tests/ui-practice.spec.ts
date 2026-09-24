@@ -41,4 +41,5 @@ test.describe('UI Practice navigation flow', () => {
     await uiPracticeFlow.goBackToUiPractice();
     await uiPracticeFlow.verifyUiPracticeHeader();
   });
+  
 });
