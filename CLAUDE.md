@@ -23,6 +23,8 @@ There is no build or lint step. TypeScript is executed directly by Playwright.
 
 A small Playwright Test project (`tests/*.spec.ts`) configured in [playwright.config.ts](playwright.config.ts): single `chromium` project, HTML reporter, fully parallel, `baseURL` is `https://playwright.dev`, and CI (`process.env.CI`) sets 2 retries, 1 worker and forbids `test.only`. Specs that target other sites (e.g. qaplayground.com in `ui-practice.spec.ts`) must use absolute URLs or a page object that overrides the base.
 
+CI: [.github/workflows/playwright.yml](.github/workflows/playwright.yml) runs the full suite on every push to `main` and uploads the HTML report as an artifact.
+
 The Playwright MCP server is configured in `.vscode/mcp.json` for Copilot Chat.
 
 ## Coding guidelines
