@@ -5,6 +5,8 @@ services:
     ipc: host
     environment:
       - CI=${CI:-}
+      # Browser page loads are slower inside Docker Desktop than on the host
+      - PW_TIMEOUT=120000
     volumes:
       # Reports and traces land on the host
       - ./playwright-report:/app/playwright-report
