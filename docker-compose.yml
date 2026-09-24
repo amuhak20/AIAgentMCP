@@ -1,0 +1,11 @@
+services:
+  playwright:
+    build: .
+    init: true
+    ipc: host
+    environment:
+      - CI=${CI:-}
+    volumes:
+      # Reports and traces land on the host
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results

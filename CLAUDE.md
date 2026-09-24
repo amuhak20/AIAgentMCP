@@ -17,6 +17,16 @@ npx playwright test tests/ui-practice.spec.ts          # single file
 npx playwright test -g "test title substring"          # single test by title
 ```
 
+Containerized run (no local Node/browsers needed; reports land in `./playwright-report`):
+
+```bash
+docker compose run --rm playwright
+docker compose run --rm playwright npx playwright test -g "title"   # subset
+docker compose build --no-cache                                     # after bumping @playwright/test
+```
+
+The `Dockerfile` image tag (`v1.63.0-noble`) must match the `@playwright/test` version in `package-lock.json`.
+
 There is no build or lint step. TypeScript is executed directly by Playwright.
 
 ## Architecture
